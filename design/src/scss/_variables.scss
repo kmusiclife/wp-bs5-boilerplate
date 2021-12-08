@@ -1,0 +1,136 @@
+//---------------------------------------------
+//
+//  Variables
+//
+//    1. Bootstrap Fonts
+//    2. Bootstrap Globals
+//    3. Bootstrap Colors
+//    4. Bootstrap Container Width
+//
+//---------------------------------------------
+
+//---------------------------------------------
+// 1. Bootstrap Fonts
+//---------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700&display=swap');
+$font-family-base: 'Noto Sans JP', sans-serif;
+
+//---------------------------------------------
+// 2. Bootstrap Globals
+//---------------------------------------------
+
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-gradients: false;
+
+//---------------------------------------------
+// 3. Bootstrap Colors
+//---------------------------------------------
+
+$body-color: #000000; // The default text color
+$white:    #fff !default;
+$black:    #000 !default;
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+) !default;
+
+$primary:    #0d6efd;
+$secondary:  #6c757d;
+$success:    #198754;
+$info:       #0dcaf0;
+$warning:    #ffc107;
+$danger:     #dc3545;
+$light:      #f8f9fa;
+$dark:       #212529;
+
+$colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "light":      $light,
+  "gray":       $gray-600,
+  "gray-300":   $gray-300,
+  "gray-400":   $gray-400,
+  "gray-500":   $gray-500,
+  "gray-600":   $gray-600,
+  "gray-700":   $gray-700,
+) !default;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "light":      $light,
+  "dark":       $dark,
+  "gray-300":   $gray-300,
+  "gray-400":   $gray-400,
+  "gray-500":   $gray-500,
+  "gray-600":   $gray-600,
+  "gray-700":   $gray-700,
+) !default;
+  
+//---------------------------------------------
+// 4. Bootstrap Container Width
+//---------------------------------------------
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+//---------------------------------------------
+// 5. Bootstrap Font Sizes
+//---------------------------------------------
+
+$h1-font-size:                1.5rem !default;
+$h2-font-size:                1.4rem !default;
+$h3-font-size:                1.3rem !default;
+$h4-font-size:                1.2rem !default;
+$h5-font-size:                1.1rem !default;
+$h6-font-size:                1rem !default;
+
+$display-font-sizes: (
+  1: 1.7rem,
+  2: 1.5rem,
+  3: 1.3rem,
+  4: 1.2rem,
+  5: 1.0rem,
+  6: 1.0rem
+) !default;
+
+$display-font-weight:    500 !default;
+$lead-font-size:         1 !default;
+$lead-font-weight:       300 !default;
+$headings-line-height:   1.5 !default;
+
+//---------------------------------------------
+// 6. Bootstrap etc...
+//---------------------------------------------
+
+$list-group-color:                  $gray-600 !default;
+$list-group-active-color:           $light !default;
+$list-group-active-bg:              rgba($primary, 0.7) !default;
+$list-group-active-border-color:    rgba($primary, 0.7) !default;
+
+$offcanvas-horizontal-width:        320px !default;

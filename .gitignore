@@ -1,0 +1,8 @@
+./design/dist
+./design/node_modules
+.DS_Store
+.htaccess
+.idea
+.vscode
+node_modules
+dist
