@@ -26,8 +26,8 @@
         list($thumbnail_image_square,) = wp_get_attachment_image_src( $thumbnail_image_id , 'square');
     }
     // アイキャッチが含まれない場合はnullではなく特定の画像を入力する場合
-    if(!$thumbnail_image) $thumbnail_image = get_template_directory_uri().'/images/thumbnail.jpg';
-    if(!$thumbnail_image_square) $thumbnail_image_square = get_template_directory_uri().'/images/thumbnail-square.jpg';
+    if(!$thumbnail_image) $thumbnail_image = get_template_directory_uri().'/dist/images/thumbnail.jpg';
+    if(!$thumbnail_image_square) $thumbnail_image_square = get_template_directory_uri().'/dist/images/thumbnail-square.jpg';
 
     // カスタムポストで画像以外の場合
     /*

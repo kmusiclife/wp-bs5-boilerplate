@@ -5,4 +5,5 @@
 .idea
 .vscode
 node_modules
-dist
+dist/css
+dist/js
