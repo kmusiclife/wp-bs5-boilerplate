@@ -15,6 +15,7 @@ add_filter( 'excerpt_more', 'custom_excerpt_more' );
 add_filter('upload_mimes',function($mimes) {
     $mimes = array(
         'jpg|jpeg|jpe' => 'image/jpeg',
+        'png' => 'image/png',
         'pdf' => 'application/pdf'
     );
     return $mimes;
@@ -30,6 +31,24 @@ add_filter('sanitize_file_name', function($filename) {
   }
   return $filename;
 }, 10);
+
+// 特定のポストタイプ＆タイトルの記事を取得
+// Access method is: get_custom_content('Page Title', 'content')->post_content
+function get_custom_content($title, $posttype){
+  $_post = get_page_by_title($title, OBJECT, $posttype);
+  return $_post ? $_post : WP_Post::get_instance(null);
+}
+register_post_type('content', array(
+  'label' => 'ページコンテンツ',
+  'public' => false,
+  'publicly_queryable' => false,
+  'menu_position' => 5,
+  'show_ui' => true,
+  'query_var' => true,
+  'has_archive' => false,
+  'show_in_rest' => true,
+  'supports' => array('title', 'editor')
+));
 
 // トピックスのカスタムポストを登録する
 // ROUTER: /topics

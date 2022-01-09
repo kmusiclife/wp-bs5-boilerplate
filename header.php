@@ -7,8 +7,8 @@
 <title></title>
 <?php wp_head() ?>
 </head>
-<body>
-<nav class="nav-main navbar navbar-expand-md navbar-light">
+<body id="<?php if(is_home()): ?>index<?php else: ?>page<?php endif; ?>">
+<nav id="navbar" class="fixed-top nav-main navbar navbar-expand-md navbar-light" style="transition: background-color 1s linear;">
     <div class="container">
         <a class="navbar-brand" href="/">
             <?php echo bloginfo('sitename') ?>
