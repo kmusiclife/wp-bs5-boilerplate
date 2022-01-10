@@ -21,7 +21,7 @@
                 aria-label="Toggle navigation"
         >
         <span class="hamburger-box" >
-            <span class="hamburger-inner"></span>
+            <span id="hamburgerInner" class="hamburger-inner"></span>
         </span>
         </button>
         <div class="collapse navbar-collapse" id="nav-main">

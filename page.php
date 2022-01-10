@@ -28,7 +28,7 @@
             <?php if($thumbnail_image): ?><div><img src="<?php echo $thumbnail_image ?>" /></div><?php endif; ?>
             <!--  Content -->
             <?php include('socialicons.php') ?>
-            <div><?php the_content() ?></div>
+            <div class="page-content"><?php the_content() ?></div>
         <?php endwhile; endif; ?>
     </div>
   </div>

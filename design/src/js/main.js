@@ -9,10 +9,10 @@ import '../scss/main.scss';
 
 let hamburger_open = false;
 const hamburger = document.querySelector('.hamburger');
-
+const hamburgerInner = document.getElementById('hamburgerInner');
 const navBar = document.getElementById('navbar');
-const isIndex = document.getElementById('index');
 const navMain = document.getElementById('nav-main');
+const isIndex = document.getElementById('index');
 var _y = window.pageYOffset;
 
 hamburger.addEventListener('click', function(){
@@ -27,15 +27,22 @@ hamburger.addEventListener('click', function(){
 
 });
 if(isIndex){
-    
     navMain.addEventListener('show.bs.collapse', function () {
         navBar.classList.remove('bg-transparent');
-        navBar.classList.add('bg-primary');
+        navBar.classList.add('bg-light');
+        navBar.classList.remove('navbar-dark');
+        navBar.classList.add('navbar-light');
+        hamburgerInner.classList.remove('light');
+        hamburgerInner.classList.add('dark');
     });
     navMain.addEventListener('hide.bs.collapse', function () {
         if(_y <= 100){
-            navBar.classList.remove('bg-primary');
+            navBar.classList.remove('bg-light');
             navBar.classList.add('bg-transparent');
+            navBar.classList.remove('navbar-light');
+            navBar.classList.add('navbar-dark');
+            hamburgerInner.classList.remove('dark');
+            hamburgerInner.classList.add('light');    
         }
     });
     window.addEventListener('scroll', function() {
@@ -43,15 +50,22 @@ if(isIndex){
         if(navBar){
             if(_y > 100) { // down
                 navBar.classList.remove('bg-transparent');
-                navBar.classList.add('bg-primary');
+                navBar.classList.remove('navbar-dark');
+                navBar.classList.add('bg-light');
+                navBar.classList.add('navbar-light');
+                hamburgerInner.classList.remove('light');
+                hamburgerInner.classList.add('dark');
             } else {
-                navBar.classList.remove('bg-primary');
-                navBar.classList.add('bg-transparent');
+                if(!hamburger_open){
+                    navBar.classList.remove('bg-light');
+                    navBar.classList.remove('navbar-light');
+                    navBar.classList.add('bg-transparent');
+                    navBar.classList.add('navbar-dark');
+                    hamburgerInner.classList.remove('dark');
+                    hamburgerInner.classList.add('light');
+                }
             }
         }
     }, {passive: true});    
 
-} else {
-    navBar.classList.remove('bg-transparent');
-    navBar.classList.add('bg-primary');
 }
