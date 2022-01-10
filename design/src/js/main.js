@@ -29,8 +29,8 @@ hamburger.addEventListener('click', function(){
 if(isIndex){
     navMain.addEventListener('show.bs.collapse', function () {
         navBar.classList.remove('bg-transparent');
-        navBar.classList.add('bg-light');
         navBar.classList.remove('navbar-dark');
+        navBar.classList.add('bg-light');
         navBar.classList.add('navbar-light');
         hamburgerInner.classList.remove('light');
         hamburgerInner.classList.add('dark');
@@ -38,8 +38,8 @@ if(isIndex){
     navMain.addEventListener('hide.bs.collapse', function () {
         if(_y <= 100){
             navBar.classList.remove('bg-light');
-            navBar.classList.add('bg-transparent');
             navBar.classList.remove('navbar-light');
+            navBar.classList.add('bg-transparent');
             navBar.classList.add('navbar-dark');
             hamburgerInner.classList.remove('dark');
             hamburgerInner.classList.add('light');    
