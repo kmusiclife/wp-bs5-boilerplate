@@ -8,12 +8,12 @@
 <?php wp_head() ?>
 </head>
 <body id="<?php if(is_home()): ?>index<?php else: ?>page<?php endif; ?>">
-<nav id="navbar" class="fixed-top nav-main navbar navbar-expand-md navbar-light" style="transition: background-color 1s linear;">
+<nav id="navbar" class="fixed-top nav-main navbar navbar-light" style="transition: background-color 1s linear;">
     <div class="container">
         <a class="navbar-brand" href="/">
             <?php echo bloginfo('sitename') ?>
         </a>
-        <button class="hamburger hamburger--collapse d-inline d-md-none" type="button"
+        <button class="hamburger hamburger--collapse" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#nav-main"
                 aria-controls="nav-main"
