@@ -33,22 +33,27 @@ add_filter('sanitize_file_name', function($filename) {
 }, 10);
 
 // 特定のポストタイプ＆タイトルの記事を取得
-// Access method is: get_custom_content('Page Title', 'content')->post_content
-function get_custom_content($title, $posttype){
+// Access method is: get_custom_content('Page Title', 'content')
+function get_custom_content($title, $posttype='content'){
   $_post = get_page_by_title($title, OBJECT, $posttype);
-  return $_post ? $_post : WP_Post::get_instance(null);
+  $_post = $_post ? $_post : WP_Post::get_instance(null);
+  return apply_filters( 'the_content', $_post->post_content );
 }
 register_post_type('content', array(
   'label' => 'ページコンテンツ',
   'public' => false,
   'publicly_queryable' => false,
-  'menu_position' => 5,
+  'menu_position' => 2,
   'show_ui' => true,
   'query_var' => true,
   'has_archive' => false,
   'show_in_rest' => true,
-  'supports' => array('title', 'editor')
+  'supports' => array('title', 'editor'),
+  'menu_icon' => 'dashicons-index-card',
 ));
+
+register_nav_menu('header-menu', 'ヘッダーメニュー');
+register_nav_menu('footer-menu', 'フッターメニュー');
 
 // トピックスのカスタムポストを登録する
 // ROUTER: /topics

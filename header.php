@@ -25,7 +25,7 @@
         </span>
         </button>
         <div class="collapse navbar-collapse" id="nav-main">
-            <?php wp_nav_menu(); ?>
+            <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
         </div>
     </div>
 </nav>
