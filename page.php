@@ -1,8 +1,7 @@
-<?php get_header() ?>
-
-<div class="container">
+<?php get_header('page') ?>
+<div class="container mt-4">
   <div class="row">
-    <div class="col-12">
+    <div class="col-md-10 mx-auto">
         <?php if( have_posts() ): while( have_posts() ): the_post(); include('variables.php'); ?>
             <!--  Title -->
             <h1><?php the_title() ?></h1>
@@ -25,7 +24,7 @@
             </ul>
             <?php endif; ?>
             <!-- Thumbnail -->
-            <?php if($thumbnail_image): ?><div><img src="<?php echo $thumbnail_image ?>" /></div><?php endif; ?>
+            <?php if($thumbnail_image): ?><div><img src="<?php echo $thumbnail_image ?>" class="w-100" /></div><?php endif; ?>
             <!--  Content -->
             <?php include('socialicons.php') ?>
             <div class="page-content"><?php the_content() ?></div>

@@ -4,6 +4,7 @@ set_post_thumbnail_size(900, 9999, true);
 add_theme_support('post-thumbnails');
 add_image_size( 'square', 500, 500, true);
 add_image_size( 'normal', 1000, 667, true);
+$theme_version = wp_get_theme()->get( 'Version' );
 
 // Excerptの設定 250文字までの抜粋で残りは...として表示
 function custom_excerpt_length( $length ) { return 250;  }
@@ -25,7 +26,7 @@ add_filter('sanitize_file_name', function($filename) {
   $info = pathinfo($filename);
   if( isset($info['extension']) ){
     $ext = strtolower($info['extension']);
-    if( preg_match('/jpg|pdf/', $ext) ) {
+    if( preg_match('/jpg|jpeg|jpe|png|pdf/', $ext) ) {
       return uniqid() . '.' . $ext;
     }
   }
@@ -52,9 +53,18 @@ register_post_type('content', array(
   'menu_icon' => 'dashicons-index-card',
 ));
 
-register_nav_menu('header-menu', 'ヘッダーメニュー');
-register_nav_menu('footer-menu', 'フッターメニュー');
+// カスタムメニューの表示
+function get_custom_menu($name){
+    return wp_get_nav_menu_items($name) ?? array();
+}
+register_nav_menu('header-menu', 'Unuse menu set');
 
+// 投稿のメニューを削除
+/*
+add_action( 'admin_menu', function(){
+    remove_menu_page( 'edit.php' );
+});
+*/
 // トピックスのカスタムポストを登録する
 // ROUTER: /topics
 // SINGLE TEMPLATE: single-topics.php or single.php

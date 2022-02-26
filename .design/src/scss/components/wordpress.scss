@@ -38,9 +38,9 @@
         font-size: 1.5rem;
         padding: 0.8em 0.5em;
         background: transparent;
-        border-left: solid 5px $dark;
+        border-left: solid 5px $primary;
         border-bottom: dashed 2px $gray-300;
-        color: $dark;
+        color: $gray-700;
         margin-bottom: 1.3rem;
     }
     h3 {
@@ -51,23 +51,27 @@
         border-bottom: dashed 2px $gray-200;
     }
 }
-.hamburger-inner
+.is-active.hamburger,
+.hamburger
 {
-    z-index: 1000;
-    &.light{
-        background-color: $light;
-        &:before,
-        &:after
-        {
+    .hamburger-inner
+    {
+        z-index: 1000;
+        &.light{
             background-color: $light;
+            &:before,
+            &:after
+            {
+                background-color: $light;
+            }
         }
-    }
-    &.dark{
-        background-color: $dark;
-        &:before,
-        &:after
-        {
+        &.dark{
             background-color: $dark;
+            &:before,
+            &:after
+            {
+                background-color: $dark;
+            }
         }
     }
 }

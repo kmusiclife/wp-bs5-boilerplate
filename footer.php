@@ -2,7 +2,14 @@
 <div class="container text-light py-md-5 py-4 px-3">
     <div class="row">
         <div class="col-12 font-size-90 order-1 order-md-0 text-center">
-            <?php wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
+            <ul class="list-group list-group-flush">
+                <?php 
+                    $nav_menus = get_custom_menu('フッター');
+                    foreach($nav_menus as $nav_menu):
+                ?>
+                    <li class="list-group-item bg-transparent"><a href="<?php echo $nav_menu->url ?>" class="text-light text-decoration-none"><?php echo $nav_menu->title ?></a></li>
+                <?php endforeach; ?>
+            </ul>
             <div class="page_item pt-4">
                 <a href="https://www.instagram.com/#" target="_blank" rel="nofollow" class="text-decoration-none text-light">                    
                     <span class="icon icon-instagram"></span> Instagram
