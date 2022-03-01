@@ -37,8 +37,8 @@ add_filter('sanitize_file_name', function($filename) {
 // Access method is: get_custom_content('Page Title', 'content')
 function get_custom_content($title, $posttype='content'){
   $_post = get_page_by_title($title, OBJECT, $posttype);
-  $_post = $_post ? $_post : WP_Post::get_instance(null);
-  return apply_filters( 'the_content', $_post->post_content );
+  if(empty($_post)) return '';
+  return isset($_post->post_content) ? apply_filters( 'the_content', $_post->post_content ) : '';
 }
 register_post_type('content', array(
   'label' => 'ページコンテンツ',
@@ -55,7 +55,8 @@ register_post_type('content', array(
 
 // カスタムメニューの表示
 function get_custom_menu($name){
-    return wp_get_nav_menu_items($name) ?? array();
+    $nav_menus = wp_get_nav_menu_items($name);
+    return $nav_menus ? $nav_menus : array();
 }
 register_nav_menu('header-menu', 'Unuse menu set');
 
