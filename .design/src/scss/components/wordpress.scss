@@ -1,13 +1,3 @@
-.header-wrap{
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    justify-content: center; 
-    .header{
-        align-self: center;
-        justify-content: center;    
-    }
-}
 .page-content{
     line-height: 2.0rem;
     .wp-block-image {
@@ -85,28 +75,4 @@
         @extend .page-link;
         background-color: $gray-200;
     }
-}
-footer{
-    ul.menu{
-        @extend .list-group;
-        @extend .list-group-flush;
-        li{
-            @extend .list-group-item, .bg-transparent;
-            a{
-                @extend .text-light, .text-decoration-none;
-            }
-        }
-    }
-}
-#nav-main{
-    ul.menu{
-        @extend .list-group, .list-group-flush;
-        @extend .navbar-nav, .ms-auto;
-        li{
-            @extend .nav-item;
-            a{
-                @extend .nav-link;
-            }
-        }
-    }    
 }
